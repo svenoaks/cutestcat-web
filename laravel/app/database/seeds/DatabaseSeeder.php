@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
         DB::table('gallery_items')->delete();
+        DB::table('users')->delete();
 
         GalleryItem::create(array('author' => 'John',
                                     'votes' => '34',
@@ -22,6 +23,8 @@ class DatabaseSeeder extends Seeder {
         GalleryItem::create(array('author' => 'Jane',
             'votes' => '343',
             'imageUrl' => 'http://www.findcatnames.com/wp-content/uploads/2014/09/453768-cats-cute-300x225.jpg'));
+
+        User::create(array('username' => 'max', 'password' => Hash::make('my_pass')));
     }
 
 }

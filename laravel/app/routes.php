@@ -16,4 +16,9 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+Route::get('login', array('as' => 'login', function () { }))->before('guest');
+Route::get('logout', array('as' => 'logout', function () { }))->before('auth');
+Route::get('profile', array('as' => 'profile', function () { }))->before('auth');
+
+Route::controller('users', 'UserController');
 Route::resource('gallery', 'GalleryController');

@@ -47,7 +47,6 @@ class GalleryController extends \BaseController {
         {
             case 'cutest':
                 return GalleryItem::all();
-                break;
         }
 	}
 
